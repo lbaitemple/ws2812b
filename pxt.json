@@ -18,7 +18,12 @@
         "test.ts"
     ],
     "public": true,
+    "targetVersions": {
+        "target": "0.15.58",
+        "targetId": "maker"
+    },
     "supportedTargets": [
+        "maker",
         "microbit"
     ],
     "preferredEditor": "tsprj",
