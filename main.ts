@@ -53,7 +53,7 @@ namespace NeoLED {
     
    export class Strip {
       buf: Buffer;
-      pin: DigitalPin;
+      pin: DigitalInOutPin;
          /**
          * Send all the changes to the strip.
          */
