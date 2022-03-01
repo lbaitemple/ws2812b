@@ -56,7 +56,7 @@ namespace NeoLED {
          * Send all the changes to the strip.
          */
         //% block="send RGB $rgb at Digital PIN $pin "
-      export function show(rgb: number, pin: DigitalInOutPin) {
+     show(rgb: number, pin: DigitalInOutPin) {
             // only supported in beta
             // ws2812b.setBufferMode(this.pin, this._mode);
             this.setPixelRGB(rgb);
