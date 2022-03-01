@@ -50,6 +50,8 @@ namespace ws2812b {
 }
 //% weight=20 color=#0855AA icon="\uf109" block="NeoLED"
 namespace NeoLED {
+    
+   export class Strip {
          /**
          * Send all the changes to the strip.
          */
@@ -83,5 +85,68 @@ namespace NeoLED {
             this.buf[offset + 1] = green;
             this.buf[offset + 2] = blue;
         }
+   }
+       /**
+     * Create a new NeoPixel driver for `numleds` LEDs.
+     * @param pin the pin where the neopixel is connected.
+     * @param numleds number of leds in the strip, eg: 24,30,60,64
+     */
+    //% blockId="neopixel_create" block="NeoPixel at pin %pin|with %numleds|leds as %mode"
+    //% weight=90 blockGap=8
+    //% parts="neopixel"
+    //% trackArgs=0,2
+    //% blockSetVariable=strip
+    export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
+        let strip = new Strip();
+        let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
+        strip.buf = pins.createBuffer(numleds * stride);
+        strip.start = 0;
+        strip._length = numleds;
+        strip._mode = mode;
+        strip._matrixWidth = 0;
+        strip.setBrightness(255)
+        strip.setPin(pin)
+        return strip;
+    }
+
+    /**
+     * Converts red, green, blue channels into a RGB color
+     * @param red value of the red channel between 0 and 255. eg: 255
+     * @param green value of the green channel between 0 and 255. eg: 255
+     * @param blue value of the blue channel between 0 and 255. eg: 255
+     */
+    //% weight=1
+    //% blockId="neopixel_rgb" block="red %red|green %green|blue %blue"
+    //% advanced=true
+    export function rgb(red: number, green: number, blue: number): number {
+        return packRGB(red, green, blue);
+    }
+
+    /**
+     * Gets the RGB value of a known color
+    */
+    //% weight=2 blockGap=8
+    //% blockId="neopixel_colors" block="%color"
+    //% advanced=true
+    export function colors(color: NeoPixelColors): number {
+        return color;
+    }
+
+    function packRGB(a: number, b: number, c: number): number {
+        return ((a & 0xFF) << 16) | ((b & 0xFF) << 8) | (c & 0xFF);
+    }
+    function unpackR(rgb: number): number {
+        let r = (rgb >> 16) & 0xFF;
+        return r;
+    }
+    function unpackG(rgb: number): number {
+        let g = (rgb >> 8) & 0xFF;
+        return g;
+    }
+    function unpackB(rgb: number): number {
+        let b = (rgb) & 0xFF;
+        return b;
+    }
+ 
 
 }
