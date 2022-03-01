@@ -6,9 +6,7 @@
     "dependencies": {
         "core": "*",
         "core---rp2040": "*",
-        "rpi-pico": "*",
-        "pxt-common-packages": "7.0.4",
-        "pxt-core": "6.0.24"
+        "rpi-pico": "*"
     },
     "files": [
         "README.md",
