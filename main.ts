@@ -36,18 +36,19 @@ enum NeoPixelMode {
     RGB_RGB = 3
 }
 
+
+   
 namespace ws2812b {
-    //% block="send buffer"
-    //% block="send buffer $buf at Digital PIN $pin "
+    //% shim=sendBufferAsm
     export function sendBuffer(buf: Buffer, pin: DigitalInOutPin) {
     }
 
-     //% block="send buffermode"
-    //% block="send buffermode $mode at Digital PIN $pin "
+    //% shim=setBufferMode
     export function setBufferMode(pin: DigitalInOutPin, mode: number) {
 
     }
 }
+
 //% weight=20 color=#0855AA icon="\uf109" block="NeoLED"
 namespace NeoLED {
     
