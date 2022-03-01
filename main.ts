@@ -52,6 +52,8 @@ namespace ws2812b {
 namespace NeoLED {
     
    export class Strip {
+      buf: Buffer;
+      pin: DigitalPin;
          /**
          * Send all the changes to the strip.
          */
