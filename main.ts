@@ -65,6 +65,11 @@ namespace NeoLED {
             ws2812b.sendBuffer(this.buf, pin);
      }
 
+     setPin(pin: DigitalInOutPin): void {
+            this.pin = pin;
+            pins.digitalWritePin(this.pin, 0);
+            // don't yield to avoid races on initialization
+      }
     
      private setPixelRGB(rgb: number): void {
 
@@ -96,15 +101,8 @@ namespace NeoLED {
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
-    export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
+    export function create(pin: DigitalPin, numleds: number): Strip {
         let strip = new Strip();
-        let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
-        strip.buf = pins.createBuffer(numleds * stride);
-        strip.start = 0;
-        strip._length = numleds;
-        strip._mode = mode;
-        strip._matrixWidth = 0;
-        strip.setBrightness(255)
         strip.setPin(pin)
         return strip;
     }
