@@ -68,8 +68,6 @@ namespace NeoLED {
     
      private setPixelRGB(rgb: number): void {
 
-            let stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
-
             let red = unpackR(rgb);
             let green = unpackG(rgb);
             let blue = unpackB(rgb);
@@ -83,9 +81,9 @@ namespace NeoLED {
             this.setBufferRGB(red, green, blue)
         }
         private setBufferRGB(red: number, green: number, blue: number): void {
-            this.buf[offset + 0] = red;
-            this.buf[offset + 1] = green;
-            this.buf[offset + 2] = blue;
+            this.buf[0] = red;
+            this.buf[1] = green;
+            this.buf[2] = blue;
         }
    }
        /**
