@@ -10,10 +10,7 @@
     },
     "files": [
         "README.md",
-        "main.ts",
-        "neopixel.ts",
-        "sendBuffer.asm",
-        "setBufferMode.asm"
+        "neopixel.ts"
     ],
     "testFiles": [
         "test.ts"

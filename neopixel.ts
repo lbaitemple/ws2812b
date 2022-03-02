@@ -249,7 +249,9 @@ namespace neopixel {
         show() {
             // only supported in beta
             // ws2812b.setBufferMode(this.pin, this._mode);
-            ws2812b.sendBuffer(this.buf, this.pin);
+            //light sendBuffer(data: DigitalInOutPin, clk: DigitalInOutPin, mode: int32, buf: Buffer): void;
+
+            light.sendBuffer(this.pin, this.pin, 1, this.buf);
         }
 
         /**
