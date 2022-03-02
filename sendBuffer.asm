@@ -16,11 +16,11 @@ sendBufferAsm:
     ; setup pin as digital
     mov r0, r6
     movs r1, #0
-    bl pins::digitalWrite
+    bl pinsDigital::digitalWrite
     
     ; load pin address
     mov r0, r6
-    bl pins::lookupPin
+    bl pinsDigital::lookupPin
 
     ldr r0, [r0, #8] ; get mbed DigitalOut from MicroBitPin
     ldr r1, [r0, #4] ; r1-mask for this pin
