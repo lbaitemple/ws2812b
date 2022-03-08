@@ -9,7 +9,6 @@
         "rpi-pico": "*"
     },
     "files": [
-        "main.ts",
         "neopixel.ts",
         "create.ts",
         "defaultlights.ts",
