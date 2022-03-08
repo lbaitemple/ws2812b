@@ -1,23 +1,21 @@
 {
-    "name": "ws2812b",
-    "version": "0.1.2",
-    "description": "A driver for WS2812B programmable LEDs in MakeCode",
-    "license": "MIT",
+    "name": "light",
+    "description": "The programmable LED (WS2812b,APA102) driver.",
     "dependencies": {
+        "core": "*",
         "core---rp2040": "*",
-        "color": "*",
-        "rpi-pico": "*"
+        "color": "*"
     },
     "files": [
         "neopixel.ts",
+        "transitions.ts",
         "create.ts",
+        "defaultstrip.ts",
+        "onboardstrip.ts",
         "defaultlights.ts",
         "defaultlightsoverrides.ts",
-        "defaultstrip.ts",
-        "neopixeloverrides.ts",
         "ns.ts",
-        "onboardstrip.ts",
-        "transitions.ts",
+        "neopixeloverrides.ts",
         "animations.jres",
         "targetoverrides.ts"
     ],
@@ -27,22 +25,11 @@
     "public": true,
     "targetVersions": {
         "target": "0.15.58",
+        "pxt": "7.5.2",
         "targetId": "maker"
     },
     "supportedTargets": [
-        "maker",
-        "rp2040",
-        "microbit"
+        "maker"
     ],
-    "preferredEditor": "tsprj",
-    "yotta": {
-        "config": {
-            "microbit-dal": {
-                "bluetooth": {
-                    "enabled": 0
-                }
-            },
-            "PXT_GC_CHECKS": 1
-        }
-    }
+    "icon": "https://pxt.azureedge.net/blob/c423c3e082bb5747e3360fda399e174b377dddcc/static/libs/light.png"
 }
