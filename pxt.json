@@ -2,7 +2,7 @@
     "name": "ws2812",
     "description": "The programmable LED (WS2812b,APA102) driver.",
     "dependencies": {
-        "core---rp2040": "*",
+        "rpi-pico": "*",
         "color": "*"
     },
     "files": [
