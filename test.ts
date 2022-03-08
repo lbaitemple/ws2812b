@@ -1,1 +1,14 @@
-// tests go here; this will not be compiled when this package is used as an extension.
+
+let strip = light.createStrip()
+strip.setBrightness(20)
+
+function flash(n: number) {
+    control.runInParallel(() => {
+        strip.setPixelColor(n, 0x0000ff)
+        pause(1000)
+        strip.setPixelColor(n, 0x000000)
+    })
+}
+
+flash(0)
+

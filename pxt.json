@@ -16,7 +16,8 @@
         "ns.ts",
         "neopixeloverrides.ts",
         "animations.jres",
-        "targetoverrides.ts"
+        "targetoverrides.ts",
+        "READEME.md"
     ],
     "testFiles": [
         "test.ts"
