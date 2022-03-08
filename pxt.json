@@ -18,7 +18,8 @@
         "ns.ts",
         "onboardstrip.ts",
         "transitions.ts",
-        "animations.jres"
+        "animations.jres",
+        "targetoverrides.ts"
     ],
     "testFiles": [
         "test.ts"
