@@ -30,5 +30,6 @@
     "supportedTargets": [
         "maker"
     ],
+    "preferredEditor": "tsprj",
     "icon": "https://pxt.azureedge.net/blob/c423c3e082bb5747e3360fda399e174b377dddcc/static/libs/light.png"
 }
