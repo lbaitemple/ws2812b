@@ -11,8 +11,15 @@
     "files": [
         "main.ts",
         "neopixel.ts",
-        "sendBuffer.asm",
-        "setBufferMode.asm"
+        "create.ts",
+        "defaultlights.ts",
+        "defaultlightsoverrides.ts",
+        "defaultstrip.ts",
+        "neopixeloverrides.ts",
+        "ns.ts",
+        "onboardstrip.ts",
+        "transitions.ts",
+        "animations.jres"
     ],
     "testFiles": [
         "test.ts"
