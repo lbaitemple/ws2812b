@@ -1,8 +1,7 @@
 {
-    "name": "light",
+    "name": "ws2812",
     "description": "The programmable LED (WS2812b,APA102) driver.",
     "dependencies": {
-        "core": "*",
         "core---rp2040": "*",
         "color": "*"
     },
