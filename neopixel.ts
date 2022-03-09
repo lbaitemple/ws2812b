@@ -1171,7 +1171,8 @@ namespace light {
         strip._dataPin = pin;
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
             strip._dataPin.digitalWrite(true);
-
+        if (strip._dataPin = pins.P21)
+            console.log("wwwww");
         return strip;
     }
 
