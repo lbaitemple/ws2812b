@@ -1164,7 +1164,7 @@ namespace light {
     ): NeoPixelStrip {
         if (!mode)
             mode = NeoPixelMode.RGB;
-
+        console.log("creates neo");
         const strip = new NeoPixelStrip();
         strip._mode = mode;
         strip._length = Math.max(0, numleds | 0);
