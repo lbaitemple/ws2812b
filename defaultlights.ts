@@ -14,6 +14,8 @@ namespace light {
     //% help="light/set-all"
     //% weight=79 blockGap=8
     export function setAll(rgb: number) {
+        console.log(rgb);
+        console.log(light.pixels);
         light.pixels.setAll(rgb);
     }
 
