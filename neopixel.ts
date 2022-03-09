@@ -1168,6 +1168,8 @@ namespace light {
         const strip = new NeoPixelStrip();
         strip._mode = mode;
         strip._length = Math.max(0, numleds | 0);
+        if (pin = pins.P21)
+            console.log("wwwtttt");
         strip._dataPin = pin;
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
             strip._dataPin.digitalWrite(true);
