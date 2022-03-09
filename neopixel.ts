@@ -142,12 +142,11 @@ namespace light {
         //% weight=80 blockGap=8
         //% advanced=true
         setAll(rgb: number) {
-            console.log("ECE");
             rgb = rgb | 0;
             const red = color.unpackR(rgb);
             const green = color.unpackG(rgb);
             const blue = color.unpackB(rgb);
-            console.log(red);
+
             const end = this._start + this._length;
             const stride = this.stride();
             for (let i = this._start; i < end; ++i) {
