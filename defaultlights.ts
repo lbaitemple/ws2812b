@@ -87,6 +87,7 @@ namespace light {
     //% help="light/set-brightness"
     //% weight=2 blockGap=8
     export function setBrightness(brightness: number): void {
+        console.log(brightness);
         light.pixels.setBrightness(brightness);
     }
 
