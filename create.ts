@@ -18,7 +18,8 @@ namespace light {
         pin: DigitalInOutPin = null,
         numleds: number = 30,
         mode: NeoPixelMode = NeoPixelMode.RGB
-    ): NeoPixelStrip {        
+    ): NeoPixelStrip {    
+        console.log("ok");    
         return light.createNeoPixelStrip(pin, numleds, mode);
     }
 
