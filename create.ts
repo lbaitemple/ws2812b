@@ -20,9 +20,12 @@ namespace light {
         mode: NeoPixelMode = NeoPixelMode.RGB
     ): NeoPixelStrip {   
         console.log("hellere"); 
-        console.log(pin);    
         console.log("what");
-        return light.createNeoPixelStrip(pin, numleds, mode);
+        const pixels = light.createNeoPixelStrip(pin, numleds, mode);
+        console.log(pixels);
+        console.log("what");
+                
+        return pixels;
     }
 
     /**
