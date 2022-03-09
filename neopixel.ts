@@ -147,7 +147,7 @@ namespace light {
             const red = color.unpackR(rgb);
             const green = color.unpackG(rgb);
             const blue = color.unpackB(rgb);
-
+            console.log(red);
             const end = this._start + this._length;
             const stride = this.stride();
             for (let i = this._start; i < end; ++i) {
@@ -1169,6 +1169,7 @@ namespace light {
         const strip = new NeoPixelStrip();
         strip._mode = mode;
         strip._length = Math.max(0, numleds | 0);
+        console.log(strip._length);
         strip._dataPin = pin;
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
             strip._dataPin.digitalWrite(false);
