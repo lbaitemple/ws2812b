@@ -21,7 +21,7 @@ namespace light {
     ): NeoPixelStrip {   
 
         console.log("is this here");
-        
+        pins.P21.digitalWrite(true);
         const pixels = light.createNeoPixelStrip(pin, numleds, mode);                
         return pixels;
     }
