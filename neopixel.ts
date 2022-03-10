@@ -1164,7 +1164,7 @@ namespace light {
     ): NeoPixelStrip {
         if (!mode)
             mode = NeoPixelMode.RGB;
-        console.log("creates neo");
+
 
         const strip = new NeoPixelStrip();
         strip._mode = mode;
@@ -1172,8 +1172,11 @@ namespace light {
         strip._dataPin = pin;
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
             strip._dataPin.digitalWrite(false);
-        console.log("is this here");
+        
         pins.LED.digitalWrite(true);
+        pause(1000);
+        pins.LED.digitalWrite(false);
+        pause(1000);
         return strip;
     }
 
