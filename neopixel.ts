@@ -149,8 +149,13 @@ namespace light {
 
             const end = this._start + this._length;
             const stride = this.stride();
+            
             for (let i = this._start; i < end; ++i) {
                 this.setBufferRGB(i * stride, red, green, blue)
+                pins.LED.digitalWrite(true);
+                pause(1000);
+                pins.LED.digitalWrite(false);
+                pause(1000);
             }
             this.autoShow();
         }
@@ -1173,10 +1178,7 @@ namespace light {
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
             strip._dataPin.digitalWrite(false);
         
-        pins.LED.digitalWrite(true);
-        pause(1000);
-        pins.LED.digitalWrite(false);
-        pause(1000);
+
         return strip;
     }
 
