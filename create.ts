@@ -19,9 +19,6 @@ namespace light {
         numleds: number = 30,
         mode: NeoPixelMode = NeoPixelMode.RGB
     ): NeoPixelStrip {   
-
-        console.log("is this here");
-        pins.LED.digitalWrite(true);
         const pixels = light.createNeoPixelStrip(pin, numleds, mode);                
         return pixels;
     }
