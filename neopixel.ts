@@ -262,6 +262,9 @@ namespace light {
             const red = color.unpackR(c);
             const green = color.unpackG(c);
             const blue = color.unpackB(c);
+            console.log(pixeloffset);
+            console.log(red);
+            console.log(blue);
             this.setBufferRGB(pixeloffset, red, green, blue)
             this.autoShow();
         }
@@ -902,21 +905,9 @@ namespace light {
                     this._buf[offset + 3] = red;
                     break;
                 default: 
-                    console.log(offset+1);
-                    pins.P1.digitalWrite(true);
-                    pause(1500);
-                    console.log(this._buf[offset + 0]);
-                    pins.LED.digitalWrite(false);
-                    pins.P1.digitalWrite(false);
-
                     this._buf[offset + 0] = green;
-
-
-                    pause(500);
-                    pins.LED.digitalWrite(true);
                     this._buf[offset + 1] = red;
                     this._buf[offset + 2] = blue;
-
 
                     break;
             }
