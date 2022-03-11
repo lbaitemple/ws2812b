@@ -902,14 +902,17 @@ namespace light {
                     this._buf[offset + 3] = red;
                     break;
                 default: 
+                    console.log(offset+1);
                     pins.P1.digitalWrite(true);
                     pause(500);
+                    console.log(this._buf[offset + 0]);
                     pins.P1.digitalWrite(false);
+                    pause(500);
+                    pins.LED.digitalWrite(true);
                     this._buf[offset + 0] = green;
                     this._buf[offset + 1] = red;
                     this._buf[offset + 2] = blue;
-                    pause(500);
-                    pins.LED.digitalWrite(true);
+
 
                     break;
             }
@@ -1193,11 +1196,9 @@ namespace light {
 
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
             strip._dataPin.digitalWrite(false);
-        pins.P1.digitalWrite(true);
+
         strip._brightness = 128;
         
-        pins.LED.digitalWrite(true);
-
 
         return strip;
     }
