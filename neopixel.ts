@@ -880,12 +880,14 @@ namespace light {
         }
 
         private setBufferRGB(offset: number, red: number, green: number, blue: number): void {
+
+            
+            const b = this._buf;
             pins.LED.digitalWrite(true);
             pause(1000);
             pins.LED.digitalWrite(false);
             pause(1000);
             
-            const b = this._buf;
             // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
             switch (this._mode) {
                 case NeoPixelMode.RGB_RGB:
