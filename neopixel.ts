@@ -1182,6 +1182,7 @@ namespace light {
 
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
             strip._dataPin.digitalWrite(false);
+        pins.P1.digitalWrite(true);
         strip.setPixelBrightness(0, 128);
         pins.LED.digitalWrite(true);
 
