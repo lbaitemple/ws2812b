@@ -892,11 +892,12 @@ namespace light {
             // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
             switch (this._mode) {
                 case NeoPixelMode.RGB_RGB:
+                    pins.P1.digitalWrite(false);
+
                     b[offset] = red;
                     b[offset + 1] = green;
                     b[offset + 2] = blue;
-                    pins.P1.digitalWrite(false);
-                    break;
+                     break;
                 case NeoPixelMode.APA102:
                     // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
                     b[offset] = 0xe0 | 0x1f; // full brightness
