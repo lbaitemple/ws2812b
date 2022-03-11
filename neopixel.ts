@@ -151,9 +151,7 @@ namespace light {
             const stride = this.stride();
             
             for (let i = this._start; i < end; ++i) {
-                pins.LED.digitalWrite(false);
-                console.log(i*stride);
-                pins.P1.digitalWrite(false);
+
                 this.setBufferRGB(i * stride, red, green, blue);
                 pins.P1.digitalWrite(true);
                 pause(200);
@@ -907,7 +905,9 @@ namespace light {
                     b[offset + 2] = green;
                     b[offset + 3] = red;
                     break;
-                default:                    
+                default: 
+                    pins.LED.digitalWrite(false);
+                    pins.P1.digitalWrite(false);
                     b[offset + 0] = green;
                     b[offset + 1] = red;
                     b[offset + 2] = blue;
