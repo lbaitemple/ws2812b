@@ -908,7 +908,8 @@ namespace light {
                     this._buf[offset + 0] = green;
                     this._buf[offset + 1] = red;
                     this._buf[offset + 2] = blue;
-                    pins.LED.digitalWrite(false);
+                    pause(500);
+                    pins.LED.digitalWrite(true);
 
                     break;
             }
