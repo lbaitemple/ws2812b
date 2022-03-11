@@ -151,6 +151,10 @@ namespace light {
             const stride = this.stride();
             
             for (let i = this._start; i < end; ++i) {
+                console.log(i * stride);
+                console.log(red);
+                console.log(blue);
+
                 this.setBufferRGB(i * stride, red, green, blue);               
             }
 
@@ -262,9 +266,6 @@ namespace light {
             const red = color.unpackR(c);
             const green = color.unpackG(c);
             const blue = color.unpackB(c);
-            console.log(pixeloffset);
-            console.log(red);
-            console.log(blue);
             this.setBufferRGB(pixeloffset, red, green, blue)
             this.autoShow();
         }
