@@ -889,8 +889,6 @@ namespace light {
             // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
             switch (this._mode) {
                 case NeoPixelMode.RGB_RGB:
-                    pins.P1.digitalWrite(false);
-
                     b[offset] = red;
                     b[offset + 1] = green;
                     b[offset + 2] = blue;
@@ -907,6 +905,7 @@ namespace light {
                     pause(1000);
                     pins.LED.digitalWrite(false);
                     pause(1000);
+                    pins.P1.digitalWrite(false);
                     b[offset + 0] = green;
                     b[offset + 1] = red;
                     b[offset + 2] = blue;
