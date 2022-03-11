@@ -905,11 +905,14 @@ namespace light {
                     console.log(offset+1);
                     pins.P1.digitalWrite(true);
                     pause(500);
+
+                    this._buf[offset + 0] = green;
+
                     console.log(this._buf[offset + 0]);
                     pins.P1.digitalWrite(false);
                     pause(500);
                     pins.LED.digitalWrite(true);
-                    this._buf[offset + 0] = green;
+                    
                     this._buf[offset + 1] = red;
                     this._buf[offset + 2] = blue;
 
