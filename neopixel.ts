@@ -151,10 +151,7 @@ namespace light {
             const stride = this.stride();
             
             for (let i = this._start; i < end; ++i) {
-                pins.P1.digitalWrite(true);
-                pause(2000);
-                this.setBufferRGB(i * stride, red, green, blue);
-                pins.P1.digitalWrite(false);                
+                this.setBufferRGB(i * stride, red, green, blue);               
             }
 
             this.autoShow();
@@ -905,8 +902,9 @@ namespace light {
                     this._buf[offset + 3] = red;
                     break;
                 default: 
+                    pins.P1.digitalWrite(true);
                     pause(500);
-
+                    pins.P1.digitalWrite(false);
                     this._buf[offset + 0] = green;
                     this._buf[offset + 1] = red;
                     this._buf[offset + 2] = blue;
