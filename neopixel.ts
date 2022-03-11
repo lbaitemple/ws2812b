@@ -907,11 +907,11 @@ namespace light {
                     break;
                 default: 
                     pause(500);
-                    pins.LED.digitalWrite(false);
-                    b[offset + 0] = green;
-                    b[offset + 1] = red;
-                    b[offset + 2] = blue;
                     pins.P1.digitalWrite(false);
+                    this._buf[offset + 0] = green;
+                    this._buf[offset + 1] = red;
+                    this._buf[offset + 2] = blue;
+                    pins.LED.digitalWrite(false);
                     break;
             }
         }
