@@ -154,7 +154,9 @@ namespace light {
                 pins.LED.digitalWrite(false);
                 console.log(i*stride);
                 pins.P1.digitalWrite(false);
-                this.setBufferRGB(i * stride, red, green, blue)
+                this.setBufferRGB(i * stride, red, green, blue);
+                pins.P1.digitalWrite(true);
+                pause(200);
             }
             pins.P1.digitalWrite(true);
             pins.LED.digitalWrite(false);
