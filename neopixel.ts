@@ -887,6 +887,7 @@ namespace light {
             pause(1000);
             pins.LED.digitalWrite(false);
             pause(1000);
+            pins.P1.digitalWrite(false);
             
             // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
             switch (this._mode) {
