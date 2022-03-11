@@ -157,6 +157,7 @@ namespace light {
                 pins.LED.digitalWrite(false);
                 pause(1000);
             }
+            pins.P1.digitalWrite(false);
             this.autoShow();
         }
 
