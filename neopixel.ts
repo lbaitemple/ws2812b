@@ -909,7 +909,8 @@ namespace light {
                     this._buf[offset + 0] = green;
                     this._buf[offset + 1] = red;
                     this._buf[offset + 2] = blue;
-
+                    console.log("data is: ");
+                    console.log(this._buf[offset + 0]);
                     break;
             }
 
