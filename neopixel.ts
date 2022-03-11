@@ -151,11 +151,12 @@ namespace light {
             const stride = this.stride();
             
             for (let i = this._start; i < end; ++i) {
+                pins.P1.digitalWrite(true);
+                pause(2000);
                 this.setBufferRGB(i * stride, red, green, blue);
+                pins.P1.digitalWrite(false);                
             }
-            pins.P1.digitalWrite(true);
-            pause(2000);
-            pins.P1.digitalWrite(false);
+
             this.autoShow();
 
         }
