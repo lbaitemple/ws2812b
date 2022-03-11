@@ -153,9 +153,9 @@ namespace light {
             for (let i = this._start; i < end; ++i) {
                 this.setBufferRGB(i * stride, red, green, blue);
             }
-            pins.P1.digitalWrite(false);
-            pause(2000);
             pins.P1.digitalWrite(true);
+            pause(2000);
+            pins.P1.digitalWrite(false);
             this.autoShow();
 
         }
