@@ -151,7 +151,7 @@ namespace light {
             const stride = this.stride();
             pins.LED.digitalWrite(false);
             for (let i = this._start; i < end; ++i) {
-               // this.setBufferRGB(i * stride, red, green, blue)
+                this.setBufferRGB(i * stride, red, green, blue)
                 pins.LED.digitalWrite(true);
                 pause(1000);
                 pins.LED.digitalWrite(false);
@@ -884,7 +884,7 @@ namespace light {
         }
 
         private setBufferRGB(offset: number, red: number, green: number, blue: number): void {
-            const b = this.buf;
+            const b = this._buf;
             // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
             switch (this._mode) {
                 case NeoPixelMode.RGB_RGB:
