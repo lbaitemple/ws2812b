@@ -925,7 +925,7 @@ namespace light {
         //% deprecated=1
         //% defaultInstance=light.pixels
         __setAll(rgb: number) {
-            pins.LED.digitalWrite(true);
+            
             this.setAll(rgb);
         }
 
@@ -1176,12 +1176,13 @@ namespace light {
     
         strip._mode = mode;
         strip._length = Math.max(0, numleds | 0);
-        strip._dataPin = pin;    
+        strip._dataPin = pin;
         strip._buf = pins.createBuffer(numleds * strip._mode);
         strip.setBrightness(128);
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
             strip._dataPin.digitalWrite(false);
         
+        pins.LED.digitalWrite(true);
 
         return strip;
     }
