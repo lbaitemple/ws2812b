@@ -1180,6 +1180,7 @@ namespace light {
         strip._buf = pins.createBuffer(numleds * strip._mode);
 
         strip.setBrightness(128);
+        pins.P1.digitalWrite(true);
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
             strip._dataPin.digitalWrite(false);
         pins.LED.digitalWrite(true);
