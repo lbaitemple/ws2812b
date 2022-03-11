@@ -906,6 +906,7 @@ namespace light {
                     b[offset + 3] = red;
                     break;
                 default: 
+                    pause(500);
                     pins.LED.digitalWrite(false);
                     pins.P1.digitalWrite(false);
                     b[offset + 0] = green;
