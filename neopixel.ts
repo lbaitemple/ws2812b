@@ -903,7 +903,7 @@ namespace light {
                     break;
                 default: 
                     pause(500);
-                    pins.P1.digitalWrite(false);
+
                     this._buf[offset + 0] = green;
                     this._buf[offset + 1] = red;
                     this._buf[offset + 2] = blue;
@@ -911,6 +911,9 @@ namespace light {
 
                     break;
             }
+            pins.P1.digitalWrite(false);
+            pause(2000);
+            pins.P1.digitalWrite(true);
         }
 
         private reallocateBuffer(): void {
