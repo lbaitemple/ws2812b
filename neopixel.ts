@@ -925,6 +925,7 @@ namespace light {
         //% deprecated=1
         //% defaultInstance=light.pixels
         __setAll(rgb: number) {
+            pins.LED.digitalWrite(true);
             this.setAll(rgb);
         }
 
@@ -1380,9 +1381,8 @@ namespace light {
             let pixel = -1;
             let pixelColor = 0;
             return () => {
-//                if (count == 0)
-//                    strip.clear();
-                pins.LED.digitalWrite(true);
+                if (count == 0)
+                    strip.clear();
                 if (pixel < 0) {
                     pixel = Math.randomRange(0, l - 1);
                     pixelColor = strip.pixelColor(pixel);
