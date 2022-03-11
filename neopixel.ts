@@ -904,7 +904,7 @@ namespace light {
                 default: 
                     console.log(offset+1);
                     pins.P1.digitalWrite(true);
-                    pause(500);
+                    pause(1500);
 
                     this._buf[offset + 0] = green;
 
