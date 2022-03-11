@@ -1173,7 +1173,7 @@ namespace light {
 
 
         const strip = new NeoPixelStrip();
-    
+        pins.LED.digitalWrite(true);
         strip._mode = mode;
         strip._length = Math.max(0, numleds | 0);
         strip._dataPin = pin;
@@ -1182,7 +1182,7 @@ namespace light {
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
             strip._dataPin.digitalWrite(false);
         
-        pins.LED.digitalWrite(true);
+
 
         return strip;
     }
