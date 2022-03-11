@@ -149,7 +149,7 @@ namespace light {
 
             const end = this._start + this._length;
             const stride = this.stride();
-            
+            pins.LED.digitalWrite(false);
             for (let i = this._start; i < end; ++i) {
                 this.setBufferRGB(i * stride, red, green, blue)
                 pins.LED.digitalWrite(true);
@@ -1184,6 +1184,7 @@ namespace light {
             strip._dataPin.digitalWrite(false);
         pins.P1.digitalWrite(true);
         strip._brightness = 128;
+        
         pins.LED.digitalWrite(true);
 
 
