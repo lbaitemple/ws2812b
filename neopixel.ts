@@ -149,12 +149,13 @@ namespace light {
 
             const end = this._start + this._length;
             const stride = this.stride();
-            pins.LED.digitalWrite(false);
+
             for (let i = this._start; i < end; ++i) {
                 this.setBufferRGB(i * stride, red, green, blue)
             }
-            pins.P1.digitalWrite(false);
+            pins.LED.digitalWrite(false);
             this.autoShow();
+            pins.P1.digitalWrite(false);
         }
 
         /**
@@ -900,16 +901,11 @@ namespace light {
                     b[offset + 2] = green;
                     b[offset + 3] = red;
                     break;
-                default:
-                    pins.LED.digitalWrite(true);
-                    pause(1000);
-                    pins.LED.digitalWrite(false);
-                    pause(1000);
-                    
+                default:                    
                     b[offset + 0] = green;
                     b[offset + 1] = red;
                     b[offset + 2] = blue;
-                    pins.P1.digitalWrite(false);
+
                     break;
             }
         }
