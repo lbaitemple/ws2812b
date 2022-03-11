@@ -905,10 +905,11 @@ namespace light {
                     pause(1000);
                     pins.LED.digitalWrite(false);
                     pause(1000);
-                    pins.P1.digitalWrite(false);
+                    
                     b[offset + 0] = green;
                     b[offset + 1] = red;
                     b[offset + 2] = blue;
+                    pins.P1.digitalWrite(false);
                     break;
             }
         }
