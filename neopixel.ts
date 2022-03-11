@@ -883,10 +883,7 @@ namespace light {
 
             
             const b = this._buf;
-            pins.LED.digitalWrite(true);
-            pause(1000);
-            pins.LED.digitalWrite(false);
-            pause(1000);
+
 
             
             // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
@@ -906,6 +903,10 @@ namespace light {
                     b[offset + 3] = red;
                     break;
                 default:
+                    pins.LED.digitalWrite(true);
+                    pause(1000);
+                    pins.LED.digitalWrite(false);
+                    pause(1000);
                     b[offset + 0] = green;
                     b[offset + 1] = red;
                     b[offset + 2] = blue;
