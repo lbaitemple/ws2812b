@@ -151,7 +151,7 @@ namespace light {
             const stride = this.stride();
             pins.LED.digitalWrite(false);
             for (let i = this._start; i < end; ++i) {
-                this.setBufferRGB(i * stride, red, green, blue)
+               // this.setBufferRGB(i * stride, red, green, blue)
                 pins.LED.digitalWrite(true);
                 pause(1000);
                 pins.LED.digitalWrite(false);
@@ -1176,7 +1176,7 @@ namespace light {
         const strip = new NeoPixelStrip();
 
         strip._mode = mode;
-        strip._start =0;
+        strip._start = 0;
         strip._length = Math.max(0, numleds | 0);
         strip._dataPin = pin;
         strip._buf = pins.createBuffer(numleds * strip._mode);
