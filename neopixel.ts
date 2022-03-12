@@ -887,7 +887,7 @@ namespace light {
         private setBufferRGB(offset: number, red: number, green: number, blue: number): void {
 
             
-            const b = this._buf;
+            //const b = this._buf;
 
 
             
@@ -907,10 +907,13 @@ namespace light {
                     break;
                 default: 
                     pins.P1.digitalWrite(true);
+
                     this._buf[offset] = green;
-                    this._buf[offset + 1] = red;
-                    pause(500); 
+                    pause(500);
                     pins.LED.digitalWrite(true);
+                                        
+                    this._buf[offset + 1] = red;
+
                     pins.P1.digitalWrite(false);
 
                     this._buf[offset + 2] = blue;
