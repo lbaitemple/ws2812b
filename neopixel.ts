@@ -119,7 +119,7 @@ namespace light {
         get brightnessBuf(): Buffer {
             if (this._parent) return this._parent.brightnessBuf;
             if (!this._brightnessBuf) {
-                const b = this.buf; // force allocate buffer
+                const b = this._buf; // force allocate buffer
                 this._brightnessBuf = control.createBuffer(this._length);
                 this._brightnessBuf.fill(this._brightness, 0, this._brightnessBuf.length);
             }
@@ -287,23 +287,23 @@ namespace light {
 
             const stride = this.stride();
             const offset = (pixeloffset + this._start) * stride;
-            const b = this.buf;
+            const b = this._buf;
             let red = 0, green = 0, blue = 0;
             switch (this._mode) {
                 case NeoPixelMode.RGB_RGB:
-                    red = this.buf[offset + 0];
-                    green = this.buf[offset + 1];
-                    blue = this.buf[offset + 2];
+                    red = this._buf[offset + 0];
+                    green = this._buf[offset + 1];
+                    blue = this._buf[offset + 2];
                     break;
                 case NeoPixelMode.APA102:
-                    blue = this.buf[offset + 1];
-                    green = this.buf[offset + 2];
-                    red = this.buf[offset + 3];
+                    blue = this._buf[offset + 1];
+                    green = this._buf[offset + 2];
+                    red = this._buf[offset + 3];
                     break;
                 default:
-                    green = this.buf[offset + 0];
-                    red = this.buf[offset + 1];
-                    blue = this.buf[offset + 2];
+                    green = this._buf[offset + 0];
+                    red = this._buf[offset + 1];
+                    blue = this._buf[offset + 2];
                     break;
             }
 
@@ -330,7 +330,7 @@ namespace light {
 
             pixeloffset = (pixeloffset + this._start) * 4;
             white = white & 0xff;
-            const buf = this.buf;
+            const buf = this._buf;
             buf[pixeloffset + 3] = white;
             this.autoShow();
         }
@@ -345,7 +345,7 @@ namespace light {
         show(): void {
             if (this._parent) this._parent.show();
             else if (this._dataPin) {
-                const b = this.buf;
+                const b = this._buf;
 
                 // fast path: no processing
                 if (this._brightness == 0xff && !this._brightnessBuf && !this._photonPenColor) {
@@ -408,7 +408,7 @@ namespace light {
         //% group="More" advanced=true
         clear(): void {
             const stride = this.stride();
-            this.buf.fill(0, this._start * stride, this._length * stride);
+            this._buf.fill(0, this._start * stride, this._length * stride);
             this.autoShow();
         }
 
@@ -513,10 +513,10 @@ namespace light {
 
             const stride = this.stride();
             if (kind === LightMove.Shift) {
-                this.buf.shift(-offset * stride, this._start * stride, this._length * stride)
+                this._buf.shift(-offset * stride, this._start * stride, this._length * stride)
             }
             else {
-                this.buf.rotate(-offset * stride, this._start * stride, this._length * stride)
+                this._buf.rotate(-offset * stride, this._start * stride, this._length * stride)
             }
             this.autoShow();
         }
