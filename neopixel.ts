@@ -301,9 +301,11 @@ namespace light {
                     red = this._buf[offset + 3];
                     break;
                 default:
+                    pins.P1.digitalWrite(true);
                     green = this._buf[offset + 0];
                     red = this._buf[offset + 1];
                     blue = this._buf[offset + 2];
+                    pins.P1.digitalWrite(false);
                     break;
             }
 
