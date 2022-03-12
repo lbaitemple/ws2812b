@@ -909,9 +909,10 @@ namespace light {
                     pins.P1.digitalWrite(true);
                     this._buf[offset + 0] = green;
                     this._buf[offset + 1] = red;
+
+                    this._buf[offset + 2] = blue;
                     pause(500);
                     pins.LED.digitalWrite(true);
-                    this._buf[offset + 2] = blue;
                     pins.P1.digitalWrite(false);
                     break;
             }
