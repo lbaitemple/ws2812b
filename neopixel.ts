@@ -891,6 +891,9 @@ namespace light {
             switch (this._mode) {
                 case NeoPixelMode.RGB_RGB:
                     this._buf[offset] = red;
+                    pause(1500);
+                    pins.LED.digitalWrite(true);
+                    pins.P1.digitalWrite(true);
                     this._buf[offset + 1] = green;
                     this._buf[offset + 2] = blue;
                      break;
@@ -903,9 +906,6 @@ namespace light {
                     break;
                 default: 
                     this._buf[offset] = red;
-                    pause(1500);
-                    pins.LED.digitalWrite(true);
-                    pins.P1.digitalWrite(true);
 
                     this._buf[offset+1] = green;
                     pause(1500);
