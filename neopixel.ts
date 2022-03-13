@@ -912,11 +912,16 @@ namespace light {
                     pause(500);
                     pins.LED.digitalWrite(true);
                     pins.P1.digitalWrite(true);
+                    pause(500);
+                    pins.LED.digitalWrite(false);
 
                     this._buf[offset+1] = green;
 
                     this._buf[offset + 2] = blue;
                     this.setBuffered(true);
+                    pause(500);
+                    pins.LED.digitalWrite(true);
+                    pins.P1.digitalWrite(false);
                     break;
             }
 
