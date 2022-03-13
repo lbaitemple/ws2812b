@@ -154,7 +154,7 @@ namespace light {
                 console.log(i * stride);
                 console.log(red);
                 console.log(blue);
-                console.log(this._buf);
+                console.log(this._buf.length);
                 console.log("----");
                 this.setBufferRGB(i * stride, red, green, blue);               
             }
