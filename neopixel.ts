@@ -875,15 +875,15 @@ namespace light {
 
         private autoShow() {
             pause(1500);
-            pins.P1.digitalWrite(true);
+            pins.P10.digitalWrite(true);
             if (!this.buffered()) {
                 pause(1500);
-                pins.P1.digitalWrite(false);
+                pins.P10.digitalWrite(false);
                 this.show();
                 pause(1);
             }else{
                 pause(500);
-                pins.P1.digitalWrite(false);
+                pins.P10.digitalWrite(false);
                 this.show();
                 pause(1);
             }
