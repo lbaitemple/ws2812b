@@ -911,7 +911,6 @@ namespace light {
                     pause(1500);
                     pins.LED.digitalWrite(true);
 
-   /*
                     this._buf[offset+1] = green;
                     pause(1500);
                     pins.P1.digitalWrite(true);
@@ -922,7 +921,6 @@ namespace light {
                     pause(1500);
                     pins.LED.digitalWrite(true);
                     pins.P1.digitalWrite(false);
-                    */
                     break;
             }
 
@@ -1200,13 +1198,6 @@ namespace light {
         strip._start = 0;
         strip._length = Math.max(0, numleds | 0);
         strip._dataPin = pin;
-        console.log("number");
-        console.log(mode);
-        console.log("product");
-        console.log(numleds * (strip._mode));
-        console.log("length");
-        console.log(strip._length);
-        console.log("endd----");
         strip._buf = control.createBuffer(numleds * strip._mode);
 
 
