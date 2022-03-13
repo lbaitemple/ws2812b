@@ -1191,7 +1191,6 @@ namespace light {
         mode?: NeoPixelMode
     ): NeoPixelStrip {
         if (!mode)
-            pins.P1.digitalWrite(true);
             mode = NeoPixelMode.RGB_RGB;
 
 
