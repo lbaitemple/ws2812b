@@ -905,16 +905,16 @@ namespace light {
                     this._buf[offset] = red;
                     pause(1500);
                     pins.LED.digitalWrite(true);
+                    pins.P1.digitalWrite(true);
 
                     this._buf[offset+1] = green;
                     pause(1500);
-                    pins.P1.digitalWrite(true);
                     pins.LED.digitalWrite(false);
 
-      //              this._buf[offset + 2] = blue;
-      //              pause(1500);
-     //               pins.LED.digitalWrite(true);
-     //               pins.P1.digitalWrite(false);
+                    this._buf[offset + 2] = blue;
+                    pause(1500);
+                    pins.LED.digitalWrite(true);
+                    pins.P1.digitalWrite(false);
     //                this.setBuffered(true);
 
                     break;
