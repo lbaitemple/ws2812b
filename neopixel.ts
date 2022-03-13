@@ -875,7 +875,6 @@ namespace light {
 
         private autoShow() {
             pause(1500);
-            pins.LED.digitalWrite(true);
             pins.P1.digitalWrite(true);
             if (!this.buffered()) {
                 pause(1500);
@@ -886,7 +885,6 @@ namespace light {
                 pause(500);
                 pins.P1.digitalWrite(false);
                 this.show();
-                pins.LED.digitalWrite(false);
                 pause(1);
             }
         }
