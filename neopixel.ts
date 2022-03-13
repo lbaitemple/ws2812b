@@ -1201,6 +1201,10 @@ namespace light {
         strip._length = Math.max(0, numleds | 0);
         strip._dataPin = pin;
         //strip._buf = control.createBuffer(numleds * strip._mode);
+        console.log("number");
+        console.log(numleds * strip._mode);
+        console.log(strip._length);
+        console.log("endd----");
         strip._buf = control.createBuffer(strip._length);
 
 
