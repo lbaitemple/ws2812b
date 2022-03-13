@@ -852,6 +852,9 @@ namespace light {
                 this._parent.setMode(mode);
             else if (this._mode != mode) {
                 this._mode = mode;
+                pins.P1.digitalWrite(true);
+                pause(1000);
+                pins.P1.digitalWrite(false);
                 this.reallocateBuffer();
             }
         }
