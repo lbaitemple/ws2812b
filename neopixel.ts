@@ -911,7 +911,7 @@ namespace light {
                     pause(1500);
                     pins.LED.digitalWrite(true);
 
-   
+   /*
                     this._buf[offset+1] = green;
                     pause(1500);
                     pins.P1.digitalWrite(true);
@@ -922,6 +922,7 @@ namespace light {
                     pause(1500);
                     pins.LED.digitalWrite(true);
                     pins.P1.digitalWrite(false);
+                    */
                     break;
             }
 
