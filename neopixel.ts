@@ -153,7 +153,11 @@ namespace light {
             for (let i = this._start; i < end; ++i) {
                 this.setBufferRGB(i * stride, red, green, blue);               
             }
-
+            pause(1500);
+            pins.LED.digitalWrite(true);
+            pins.P1.digitalWrite(true);
+            pause(1500);
+            pins.P1.digitalWrite(false);
             this.autoShow();
 
         }
@@ -893,14 +897,8 @@ namespace light {
                     this._buf[offset] = red;
                     this._buf[offset + 1] = green;
                     this._buf[offset + 2] = blue;
-                    pause(1500);
-                    pins.LED.digitalWrite(true);
-                    pins.P1.digitalWrite(true);
                     this.setBuffered(true);
-                    pause(1500);
-                    pins.LED.digitalWrite(true);
-                    pins.P1.digitalWrite(false);
-                     break;
+                    break;
                 case NeoPixelMode.APA102:
                     // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
                     this._buf[offset] = 0xe0 | 0x1f; // full brightness
@@ -910,17 +908,8 @@ namespace light {
                     break;
                 default: 
                     this._buf[offset] = red;
-
                     this._buf[offset+1] = green;
-                    pause(1500);
-                    pins.LED.digitalWrite(false);
-
                     this._buf[offset + 2] = blue;
-                    pause(1500);
-                    pins.LED.digitalWrite(true);
-                    pins.P1.digitalWrite(false);
-    //                this.setBuffered(true);
-
                     break;
             }
 
