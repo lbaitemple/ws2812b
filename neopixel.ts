@@ -1191,7 +1191,7 @@ namespace light {
         mode?: NeoPixelMode
     ): NeoPixelStrip {
         if (!mode)
-            mode = NeoPixelMode.RGB;
+            mode = NeoPixelMode.RGB_RGB;
 
 
         const strip = new NeoPixelStrip();
@@ -1202,7 +1202,7 @@ namespace light {
         strip._dataPin = pin;
         //strip._buf = control.createBuffer(numleds * strip._mode);
         console.log("number");
-        console.log(numleds * (strip._mode+1));
+        console.log(numleds * (strip._mode));
         console.log(strip._length);
         console.log("endd----");
         strip._buf = control.createBuffer(numleds * (strip._mode + 1));
