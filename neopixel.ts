@@ -915,7 +915,7 @@ namespace light {
                     pause(1500);
                     pins.LED.digitalWrite(true);
                     pins.P1.digitalWrite(false);
-                    this.setBuffered(true);
+    //                this.setBuffered(true);
 
                     break;
             }
