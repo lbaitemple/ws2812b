@@ -153,11 +153,7 @@ namespace light {
             for (let i = this._start; i < end; ++i) {
                 this.setBufferRGB(i * stride, red, green, blue);               
             }
-            pause(1500);
-            pins.LED.digitalWrite(true);
-            pins.P1.digitalWrite(true);
-            pause(1500);
-            pins.P1.digitalWrite(false);
+
             this.autoShow();
 
         }
@@ -878,7 +874,12 @@ namespace light {
         }
 
         private autoShow() {
+            pause(1500);
+            pins.LED.digitalWrite(true);
+            pins.P1.digitalWrite(true);
             if (!this.buffered()) {
+                pause(1500);
+                pins.P1.digitalWrite(false);
                 this.show();
                 pause(1);
             }
