@@ -1208,7 +1208,7 @@ namespace light {
         console.log("length");
         console.log(strip._length);
         console.log("endd----");
-        strip._buf = control.createBuffer(numleds * (strip._mode + 1));
+        strip._buf = control.createBuffer(numleds * 3);
 
 
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
