@@ -886,6 +886,8 @@ namespace light {
                 pause(500);
                 pins.P1.digitalWrite(false);
                 this.show();
+                pins.LED.digitalWrite(false);
+                pause(1);
             }
         }
 
