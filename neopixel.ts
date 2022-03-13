@@ -902,10 +902,6 @@ namespace light {
                     this._buf[offset + 3] = red;
                     break;
                 default: 
-                    console.log('xxxxa-s');
-                    console.log(this._buf.length);
-                    console.log('xxxxa-s');
-
                     this._buf[offset] = red;
                     pause(1500);
                     pins.LED.digitalWrite(true);
