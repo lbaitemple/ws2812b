@@ -1195,7 +1195,7 @@ namespace light {
         strip._start = 0;
         strip._length = Math.max(0, numleds | 0);
         strip._dataPin = pin;
-        strip._buf = pins.createBuffer(numleds * strip._mode);
+        strip._buf = control.createBuffer(numleds * strip._mode);
         
 
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
