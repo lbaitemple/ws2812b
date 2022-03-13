@@ -908,7 +908,7 @@ namespace light {
                 default: 
                     pins.P1.digitalWrite(true);
 
-                    this._buf[offset+1] = green;
+                    this._buf[offset] = red;
                     pause(500);
                     pins.LED.digitalWrite(true);
                                         
