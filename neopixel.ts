@@ -891,11 +891,15 @@ namespace light {
             switch (this._mode) {
                 case NeoPixelMode.RGB_RGB:
                     this._buf[offset] = red;
+                    this._buf[offset + 1] = green;
+                    this._buf[offset + 2] = blue;
                     pause(1500);
                     pins.LED.digitalWrite(true);
                     pins.P1.digitalWrite(true);
-                    this._buf[offset + 1] = green;
-                    this._buf[offset + 2] = blue;
+                    this.setBuffered(true);
+                    pause(1500);
+                    pins.LED.digitalWrite(true);
+                    pins.P1.digitalWrite(false);
                      break;
                 case NeoPixelMode.APA102:
                     // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
