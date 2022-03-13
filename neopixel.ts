@@ -96,7 +96,7 @@ namespace light {
 
         constructor() {
             this._buffered = false;
-            this._mode = NeoPixelMode.RGB;
+            this._mode = NeoPixelMode.RGB_RGB;
             this._length = 0;
             this._brightness = 16;
             this._start = 0;
@@ -1196,11 +1196,10 @@ namespace light {
 
         const strip = new NeoPixelStrip();
 
-        strip._mode = mode;
+        //strip._mode = mode;
         strip._start = 0;
         strip._length = Math.max(0, numleds | 0);
         strip._dataPin = pin;
-        //strip._buf = control.createBuffer(numleds * strip._mode);
         console.log("number");
         console.log(mode);
         console.log("product");
@@ -1208,7 +1207,7 @@ namespace light {
         console.log("length");
         console.log(strip._length);
         console.log("endd----");
-        strip._buf = control.createBuffer(numleds * 3);
+        strip._buf = control.createBuffer(numleds * strip._mode);
 
 
         if (strip._dataPin) // board with no-board LEDs won't have a default pin
