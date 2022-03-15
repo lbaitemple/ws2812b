@@ -906,8 +906,6 @@ namespace light {
                     this._buf[offset] = red;
                     this._buf[offset + 1] = green;
                     this._buf[offset + 2] = blue;
-                    pause(1000);
-                    pins.P11.digitalWrite(false);
                     this.setBuffered(true);
                     break;
                 case NeoPixelMode.APA102:
@@ -918,13 +916,9 @@ namespace light {
                     this._buf[offset + 3] = red;
                     break;
                 default: 
-    
-                    pins.P11.digitalWrite(true);
                     this._buf[offset] = red;
                     this._buf[offset+1] = green;
                     this._buf[offset + 2] = blue;
-                    pause(500);
-                    pins.P11.digitalWrite(false);
                     break;
             }
 
