@@ -17,7 +17,7 @@ namespace light {
     export function createStrip(
         pin: DigitalInOutPin = null,
         numleds: number = 30,
-        mode: NeoPixelMode = NeoPixelMode.RGB
+        mode: NeoPixelMode = NeoPixelMode.RGB_RGB
     ): NeoPixelStrip {   
         const pixels = light.createNeoPixelStrip(pin, numleds, mode);                
         return pixels;
