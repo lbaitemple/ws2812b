@@ -340,7 +340,7 @@ namespace light {
         /**
          * Make the strip show all the new changes for the pixels.
          */
-        //% blockId="light_show" block="%strip|show"
+        //% blockId="light_show" block="%strip|show LED"
         //% help="light/neopixelstrip/show"
         //% weight=86 blockGap=8
         //% group="More" advanced=true
