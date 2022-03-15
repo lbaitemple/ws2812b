@@ -292,12 +292,10 @@ namespace light {
             let red = 0, green = 0, blue = 0;
             switch (this._mode) {
                 case NeoPixelMode.RGB_RGB:
-                    pins.P11.digitalWrite(true);
                     green = this._buf[offset + 0];
                     red = this._buf[offset + 1];
                     blue = this._buf[offset + 2];
-                    pause(1000);
-                    pins.P11.digitalWrite(false);
+
                     break;
                 case NeoPixelMode.APA102:
                     blue = this._buf[offset + 1];
@@ -903,9 +901,13 @@ namespace light {
             // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
             switch (this._mode) {
                 case NeoPixelMode.RGB_RGB:
+                    pause(1000);
+                    pins.P11.digitalWrite(true);
                     this._buf[offset] = red;
                     this._buf[offset + 1] = green;
                     this._buf[offset + 2] = blue;
+                    pause(1000);
+                    pins.P11.digitalWrite(false);
                     this.setBuffered(true);
                     break;
                 case NeoPixelMode.APA102:
@@ -916,9 +918,13 @@ namespace light {
                     this._buf[offset + 3] = red;
                     break;
                 default: 
+    
+                    pins.P11.digitalWrite(true);
                     this._buf[offset] = red;
                     this._buf[offset+1] = green;
                     this._buf[offset + 2] = blue;
+                    pause(500);
+                    pins.P11.digitalWrite(false);
                     break;
             }
 
