@@ -372,6 +372,7 @@ namespace light {
                         sb[offset + j] = (b[offset + j] * (_bb ? _bb[i] : this._brightness)) >> 8;
                 }
                 // apply photon
+                pins.P11.digitalWrite(false);
                 this.drawPhoton(sb, stride);
                 //console.log(`${!!this._dataPin} ${!!this._clkPin} ${this.mode} hex${sb.toHex()}`)
                 light.sendBuffer(this._dataPin, this._clkPin, this._mode, sb);
