@@ -149,18 +149,14 @@ namespace light {
 
             const end = this._start + this._length;
             const stride = this.stride();
-            pins.P10.digitalWrite(true);
+
             this.autoShow();
             for (let i = this._start; i < end; ++i) {
                 this.setBufferRGB(i * stride, red, green, blue);               
             }
-            pause(1500);
-            pins.P10.digitalWrite(false);
-            pause(500);
-            pins.P10.digitalWrite(true);
+
             this.autoShow();
-            pause(500);
-            pins.P10.digitalWrite(false);
+
         }
 
         /**
@@ -376,7 +372,7 @@ namespace light {
                 this.drawPhoton(sb, stride);
                 //console.log(`${!!this._dataPin} ${!!this._clkPin} ${this.mode} hex${sb.toHex()}`)
                 light.sendBuffer(this._dataPin, this._clkPin, this._mode, sb);
-                pins.P11.digitalWrite(false);
+
             }
         }
 
@@ -903,12 +899,11 @@ namespace light {
             // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
             switch (this._mode) {
                 case NeoPixelMode.RGB_RGB:
-                    pause(1000);
-                    pins.P11.digitalWrite(true);
+
                     this._buf[offset] = red;
                     this._buf[offset + 1] = green;
                     this._buf[offset + 2] = blue;
-                    this.setBuffered(true);
+                    //this.setBuffered(true);
                     break;
                 case NeoPixelMode.APA102:
                     // https://cdn-shop.adafruit.com/datasheets/APA102.pdf
