@@ -146,7 +146,9 @@ namespace light {
             const red = color.unpackR(rgb);
             const green = color.unpackG(rgb);
             const blue = color.unpackB(rgb);
-
+            console.log(red);
+            console.log(green);
+            console.log(blue);
             const end = this._start + this._length;
             const stride = this.stride();
 
